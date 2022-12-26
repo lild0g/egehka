@@ -171,3 +171,34 @@ for n in range(1, 100):
         print(r)
         break'''
 
+'''
+def f(s):
+ summa = 0
+ for i in range(len(s)):
+ summa += int(s[i])
+ return summa
+for n in range(1, 100):
+ s = bin(n)[2:] # перевод в двоичную систему
+ s = str(s)
+ summa = f(s)
+ s = s + str(summa % 2)
+ summa = f(s)
+ s = s + str(summa % 2)
+ r = int(s, 2) # перевод в десятичную систему
+ if r > 43:
+ print(r)
+ break
+'''  # для bin
+
+'''k = 0
+for i in range(100, 1000):
+ s = str(i)
+ k1 = int(s[0]) + int(s[1])
+ k2 = int(s[1]) + int(s[2])
+ first = str(max(k1, k2))
+ second = str((min(k1, k2)))
+ s1 = first + second
+ if s1 == '1715':
+ k += 1
+print(k)'''  # для int
+

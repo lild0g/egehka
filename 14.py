@@ -35,3 +35,52 @@ print(k)'''
     if t % 154 == 0:
         print(t // 154)
         break'''
+
+
+
+
+'''
+x = 5 ** 36 + 5 ** 24 - 25
+s = ''
+while x != 0:
+    s += str(x % 5)
+    x //= 5
+s = s[::-1]
+print(s.count("4"))
+'''  # прямое сложение
+
+'''
+result_search = []
+for x in '012345678':
+    for y in '012345678':
+        t = int('2' + y + '66' + x, 9) + int('' + x + '0' + y + '1', 12)
+        if t % 170 == 0:
+            result_search.append(t)
+if result_search:         
+    print(min(result_search) // 170)
+'''  # операции с двумя переменными 2y66x9 + x0y112
+
+'''
+for x in '0123456789AB':
+    t = int('2AB' + x + '', 12) + int('' + x + '8E', 17)
+    if t % 27 == 0:
+        print(t // 27)
+        break
+'''  # операции с одной переменной 2ABx12 + x8E17
+
+'''
+for x in '0123456789A':
+    t = int('982' + x + '8', 11) + int('194' + x + '7', 11)
+    if t % 58 == 0:
+        print(t // 58)
+        exit
+'''  # операции в одной СС 982x811 + 194x711
+
+'''
+for A in range(1, 1000):
+    for x in '0123456789AB':
+        M = int('49' + x + '26', 12)
+        N = int('49' + x + '70', 12)
+        if (M + A) % N == 0:
+            print(A)
+            break'''

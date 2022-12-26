@@ -4,3 +4,17 @@
 #Сколько различных кодов может составить Борис?
 
 
+
+
+
+
+'''
+from itertools import product
+cab = product('лето', repeat=4)
+cnt = 0
+for i in cab:
+    s = ''.join(i)
+    if s[0] == 'л' or s[0] == 'т':
+        cnt += 1
+print(cnt)
+'''
