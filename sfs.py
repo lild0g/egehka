@@ -83,3 +83,4 @@ print(my_dict)'''
    print(squares)'''
 
 # CTRL+ALT+L - PEP8
+# all, any, len, sorted
