@@ -3,13 +3,13 @@
 # записали в системе счисления с основанием 5.
 # Сколько цифр 4 содержится в этой записи?
 
-x = 9**8 + 3**8 - 2
+'''x = 9**8 + 3**8 - 2
 k = 0
 while x > 0:
     if x % 3 == 2:
         k += 1
     x //= 3
-print(k)
+print(k)'''
 
 
 # ТИП 2
@@ -49,15 +49,15 @@ s = s[::-1]
 print(s.count("4"))
 '''  # прямое сложение
 
-'''
-result_search = []
-for x in '012345678':
-    for y in '012345678':
-        t = int('2' + y + '66' + x, 9) + int('' + x + '0' + y + '1', 12)
-        if t % 170 == 0:
-            result_search.append(t)
-if result_search:         
-    print(min(result_search) // 170)
+
+'''result = []
+for x in '0123456789ABC':
+    for y in '0123456789ABC':
+        t = int('8' + x + '78' + y, 13) + int('79' + x + y + '7', 18)
+        if t % 9 == 0:
+            result.append(t)
+if result:
+    print(min(result) // 9)
 '''  # операции с двумя переменными 2y66x9 + x0y112
 
 '''
