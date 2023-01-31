@@ -58,7 +58,7 @@ print(a)'''
 
 # ЗАДАЧА №4872
 
-p = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+'''p = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
 q = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}
 a = {i for i in range(1, 1000)}
 
@@ -70,5 +70,51 @@ def f(x):
 for x in range(1, 1000):
     if f(x) == 0:
         a.remove(x)
-print(len(a))
+print(len(a))'''
 
+# ОТРЕЗКИ
+
+'''def f(x, a1, a2):
+    return (a1 <= x <= a2) <= (430 <= x <= 490) or (440 <= x <= 530)
+
+m = 0
+for a1 in range(400, 600):
+    for a2 in range(a1 + 1, 600):
+        if all(f(x, a1, a2) == 1 for x in range(400, 600)):
+            m = max(m, a2 - a1)
+
+print(m//10)'''
+
+
+'''def f(x, a1, a2):
+    return (a1 <= x <= a2) <= (150 <= x <= 390) or (440 <= x <= 570)
+
+m = 0
+for a1 in range(100, 600):
+    for a2 in range(a1 + 1, 600):
+        if all(f(x, a1, a2) == 1 for x in range(100, 600)):
+            m = max(m, a2 - a1)
+
+print(m//10)'''
+
+
+'''def f(x,a1,a2):
+    return (((150 <= x <= 390) <= (a1 <= x < a2)) and ((440 <= x <= 570) <= ( a1 <= x <= a2)))
+
+m = 10**5
+for a1 in range(100, 600):
+    for a2 in range(a1 + 1, 600):
+        if all(f(x, a1, a2) == 1 for x in range(100, 600)):
+            m = min(m, a2 - a1)
+print(m//10)'''
+
+
+def f(x,a1,a2):
+    return (not(a1 <= x <= a2) <= (not(250 <= x <= 500))) <= ((a1 <= x <= a2) <= (320 <= x <= 470))
+
+m = 0
+for a1 in range(200, 600):
+    for a2 in range(a1 + 1, 600):
+        if all(f(x, a1, a2) == 1 for x in range(200, 600)):
+            m = max(m, a2 - a1)
+print(m//10)
