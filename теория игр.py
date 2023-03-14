@@ -49,7 +49,7 @@ for s in range(1, 55):
             print(s, m)
             break'''
 
-def f(s, p0, p1, c, m):
+'''def f(s, p0, p1, c, m):
     if s >= 121: return c%2 == m%2
     if c == m: return 0
 
@@ -66,6 +66,9 @@ for s in range(1, 121):
         if f(s, '', '', 0, m) == 1:
             if m == 3:
                 print(s, m)
-                break
+                break'''
+
+
+
 
 
