@@ -51,3 +51,33 @@ for i in range(len(a)):
         k += 1
         m = max(m, i)
     print(k, m)'''
+
+# Номер 37348 РЕШУ ЕГЭ
+
+'''a = [int(x) for x in open('17 (1).txt')]
+ans = []
+for i in range(len(a) - 1):
+    for j in range(i + 1, len(a)):
+        if (a[i]*a[j]) % 34 != 0:
+            ans.append(a[i] + a[j])
+print(len(ans), max(ans))'''
+
+# Номер 37340 РЕШУ ЕГЭ
+
+'''a = [int(x) for x in open('17 (2).txt')]
+ans = []
+for i in range(len(a) - 1):
+    for j in range(i + 1, len(a)):
+        if (a[i]-a[j]) % 2 == 0 and (a[i] % 31 == 0 or a[j] % 31 == 0):
+            ans.append(a[i] + a[j])
+print(len(ans), max(ans))'''
+
+# Номер 37357 РЕШУ ЕГЭ
+
+'''a = [int(x) for x in open('17 (3).txt')]
+ans = []
+for i in range(len(a) - 1):
+    for j in range(i + 1, len(a)):
+        if a[i]+a[j] % 8 == 0:
+            ans.append(a[i] + a[j])
+print(len(ans), max(ans))'''
