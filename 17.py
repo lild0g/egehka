@@ -95,7 +95,7 @@ for i in range(len(a)-1):
         ans.append(a[i]**2 + a[i+1]**2)
 print(len(ans), max(ans))'''
 
-# 47221
+# Номер 47221 РЕШУ ЕГЭ
 
 '''a = [int(x) for x in open('17 (6).txt')]
 ans = []
@@ -108,11 +108,48 @@ for i in range(len(a)-1):
         ans.append(a[i] ** 2 + a[i + 1] ** 2)
 print(len(ans), max(ans))'''
 
-# полкяков 4496
+# Полкяков 4496
 
-a = [int(x) for x in open('17-205.txt')]
+'''a = [int(x) for x in open('17-205.txt')]
 ans = []
 for i in range(len(a) - 1):
-    if (((abs(a[i]) - abs(a[i + 1])) % 2 == 0) and ((abs(a[i]) - abs(a[i + 1])) % 37 == 0)):
+    if (abs(a[i]) - abs(a[i + 1])) % 74 == 0:
         ans.append(a[i] + a[i+1])
-print(len(ans), max(ans))
+print(len(ans), max(ans))'''
+
+# Поляков 5066
+
+'''a = [int(x) for x in open('17-288.txt')]
+ans = []
+for i in range(len(a) - 2):
+    if abs(a[i]) % 7 != abs(a[i + 1]) % 7 and abs(a[i + 1]) % 7 != abs(a[i + 2]) % 7 and abs(a[i]) % 7 != abs(a[i + 2]) % 7 and (a[i] < 0 or a[i+1] < 0 or a[i+2] < 0):
+        ans.append((max(a[i], a[i+1], a[i+2])) - (min(a[i], a[i+1], a[i+2])))
+print(len(ans), min(ans))'''
+
+# Пояков 4693
+
+'''a = [int(x) for x in open('17-243.txt')]
+ans = []
+m = []
+for i in range(len(a) - 1):
+    if a[i] % 119 == 0:
+        m.append(a[i])
+m1 = max(m)
+for i in range(len(a) - 1):
+    if ():
+        ans.append(a[i] + a[i+1])
+print(len(ans), min(ans))'''
+
+# Пояков 4688
+
+'''a = [int(x) for x in open('17-243.txt')]
+ans = []
+m = []
+for i in range(len(a) - 1):
+    if a[i] % 19 == 0:
+        m.append(a[i])
+m1 = max(m)
+for i in range(len(a) - 1):
+    if (a[i] > m1 or a[i+1] > m1):
+        ans.append(a[i] + a[i+1])
+print(len(ans), min(ans))'''
