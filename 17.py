@@ -81,3 +81,38 @@ for i in range(len(a) - 1):
         if a[i]+a[j] % 8 == 0:
             ans.append(a[i] + a[j])
 print(len(ans), max(ans))'''
+
+# 48465
+
+'''a = [int(x) for x in open('17 (6).txt')]
+ans = []
+min6 = 10001
+for i in range(len(a)):
+    if abs(a[i]) % 10 == 6:
+        min6 = min(min6, a[i])
+for i in range(len(a)-1):
+    if ((abs(a[i]) % 10 == 6 and abs(a[i+1]) % 10 != 6) or (abs(a[i]) % 10 != 6 and abs(a[i+1]) % 10 == 6)) and (a[i]**2 + a[i+1]**2 < min6**2):
+        ans.append(a[i]**2 + a[i+1]**2)
+print(len(ans), max(ans))'''
+
+# 47221
+
+'''a = [int(x) for x in open('17 (6).txt')]
+ans = []
+max6 = -10001
+for i in range(len(a)):
+    if abs(a[i]) % 10 == 3:
+        max6 = max(max6, a[i])
+for i in range(len(a)-1):
+    if ((abs(a[i]) % 10 == 3 and abs(a[i+1]) % 10 != 3) or (abs(a[i]) % 10 != 3 and abs(a[i+1]) % 10 == 3)) and (a[i]**2 + a[i+1]**2 >= max6**2):
+        ans.append(a[i] ** 2 + a[i + 1] ** 2)
+print(len(ans), max(ans))'''
+
+# полкяков 4496
+
+a = [int(x) for x in open('17-205.txt')]
+ans = []
+for i in range(len(a) - 1):
+    if (((abs(a[i]) - abs(a[i + 1])) % 2 == 0) and ((abs(a[i]) - abs(a[i + 1])) % 37 == 0)):
+        ans.append(a[i] + a[i+1])
+print(len(ans), max(ans))
