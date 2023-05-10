@@ -10,10 +10,10 @@
 
 
 from itertools import product
-a = product('лето', repeat=4)
-b = 0
+a = product('ABCDEFX', repeat=4)
+k = 0
 for i in a:
     s = ''.join(i)
-    if s[0] == 'л' or s[0] == 'т':
-        b += 1
-print(b)
+    if s.count('X') == 1:
+        k += 1
+print(k)

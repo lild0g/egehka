@@ -1,12 +1,19 @@
 # Номер 224 Поляков
 
 '''def f(n):
-    if n == 1: return 1
+    if n <= 1: return 1
     if n > 1 and n % 2 == 0: return n * n + f(n - 1)
     if n > 1 and n % 2 != 0: return f(n - 1) + 2 * f(n - 2)
 
-
 print(f(23))'''
+
+'''def F(n):
+    if n <= 2:return n + 1
+    if n > 2:return F(n - 1) * F(n - 2)
+print(F(4))'''
+
+#F(n) = n + 1 при n ≤ 2;
+#F(n) = F(n − 1) × F(n − 2) при n > 2.
 
 # Номер 226 Поляков
 
@@ -97,7 +104,7 @@ print(f(39))'''
 
 # Номер 3691
 
-def f(n):
+'''def f(n):
     if n <= 1: return 1
     if n > 1 and n % 2 == 0: return 3 + f((n / 2) - 1)
     if n > 1 and n % 2 != 0: return n + f(n + 2)
@@ -110,4 +117,4 @@ while n < 1000:
             break
     except:
         pass
-    n += 1
+    n += 1'''
