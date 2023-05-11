@@ -38,3 +38,4 @@ for x in range(1, 8):
             count += 1
 print(count)
 '''  # треугольник с двумя условиями
+

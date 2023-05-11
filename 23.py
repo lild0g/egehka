@@ -1,20 +1,20 @@
 # Номер 26 Поляков
-def f(c, e):
+'''def f(c, e):
     if c > e or c == 12: return 0
     if c == e: return 1
     if c < e: return f(c + 1, e) + f(c + 3, e)
 
 
-print(f(1, 10) * f(10, 15))
+print(f(1, 10) * f(10, 15))'''
 
-def f(x, y):
+'''def f(x, y):
     if x > y or x == 12:
         return 0
     if x == y:
         return 1
     else:
         return f(x + 1, y) + f(x + 3, y)
-print(f(1, 10) * f(10, 15))
+print(f(1, 10) * f(10, 15))'''
 
 # 1. Прибавить 1
 # 2. Прибавить 3
