@@ -83,7 +83,7 @@ for i in range(0, 100, 2):
         k += 1
 print(k)'''
 
-# №13 - ответ 77 -1944
+# №13 - ответ: 77 -1944
 
 '''ans = []
 a = [int(x) for x in open('13.txt')]
