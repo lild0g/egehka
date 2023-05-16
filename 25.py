@@ -1,7 +1,7 @@
 # Номер 4987 Поляков
 
-'''for c1 in '0123456789':
-    for c2 in '0123456789':
+'''for c1 in '123456789':
+    for c2 in '123456789':
         a = int(f'1{c1}34567{c2}9')
         if a % 17 == 0:
             print(a, a // 17)'''
@@ -70,13 +70,13 @@ for i in range(135790, 163228 + 1):
 
 def div(x):
     d = set()
-    for i in range(1, int(x ** 0.5) + 1):
+    for i in range(2, int(x ** 0.5) + 1):
         if x % i == 0:
             d.add(i)
             d.add(x // i)
     return sorted(d)
 
 
-for i in range(248015, 251575 + 1, 2):
-    if len(div(i)) % 2 != 0:
-        print(i, div(i))
+for j in range(123456789, 223456789 + 1, 2):
+    if len(div(j)) == 3:
+        print(j, j**0.5)

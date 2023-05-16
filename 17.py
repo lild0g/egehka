@@ -54,13 +54,13 @@ for i in range(len(a)):
 
 # Номер 37348 РЕШУ ЕГЭ
 
-'''a = [int(x) for x in open('17 (1).txt')]
+a = [int(x) for x in open('17 (17).txt')]
 ans = []
 for i in range(len(a) - 1):
     for j in range(i + 1, len(a)):
-        if (a[i]*a[j]) % 34 != 0:
+        if (a[i] + a[j]) % 2 != 0 and (a[i] * a[j]) % 5 == 0:
             ans.append(a[i] + a[j])
-print(len(ans), max(ans))'''
+print(len(ans), max(ans))
 
 # Номер 37340 РЕШУ ЕГЭ
 
