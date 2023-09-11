@@ -58,7 +58,7 @@ for x in '0123456789ABC':
             result.append(t)
 if result:
     print(min(result) // 9)
-'''  # операции с двумя переменными 2y66x9 + x0y112
+'''  # операции с двумя переменными 2y66x9 + x0y112  98897x2119 + 2x92319
 
 '''
 for x in '0123456789AB':
@@ -84,3 +84,4 @@ for A in range(1, 1000):
         if (M + A) % N == 0:
             print(A)
             break'''
+

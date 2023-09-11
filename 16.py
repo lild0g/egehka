@@ -118,3 +118,13 @@ while n < 1000:
     except:
         pass
     n += 1'''
+
+from sys import *  # вызывает функцию sys
+setrecursionlimit(10000)
+
+def F(n):
+    if n > 2024: return n
+    if n <= 2024: return n * F(n + 1)
+
+
+print(F(2022) / F(2024))

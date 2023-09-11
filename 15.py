@@ -109,7 +109,7 @@ for a1 in range(100, 600):
 print(m//10)'''
 
 
-def f(x,a1,a2):
+'''def f(x,a1,a2):
     return (not(a1 <= x <= a2) <= (not(250 <= x <= 500))) <= ((a1 <= x <= a2) <= (320 <= x <= 470))
 
 m = 0
@@ -117,4 +117,13 @@ for a1 in range(200, 600):
     for a2 in range(a1 + 1, 600):
         if all(f(x, a1, a2) == 1 for x in range(200, 600)):
             m = max(m, a2 - a1)
-print(m//10)
+print(m//10)'''
+
+
+def f(x, y, a):
+    return (x + 2 * y < a) or (y > x) or (x > 60) #выражение в ()
+
+for a in range(1, 1000):
+    if all(f(x, y, a) == 1 for x in range(1, 1000) for y in range(1, 1000)):
+        print(a)
+        break
