@@ -68,7 +68,7 @@ for i in range(135790, 163228 + 1):
 
 # Номер 2905 Поляков
 
-def div(x):
+'''def div(x):
     d = set()
     for i in range(2, int(x ** 0.5) + 1):
         if x % i == 0:
@@ -79,4 +79,67 @@ def div(x):
 
 for j in range(123456789, 223456789 + 1, 2):
     if len(div(j)) == 3:
-        print(j, j**0.5)
+        print(j, j**0.5)'''
+
+
+# Номер 2562 Поляков
+
+'''def f(x):
+    d = set()
+    for i in range(2, int(x ** 0.5) + 1):
+        if x % i == 0:
+            d.add(i)
+            d.add(x // i)
+    return sorted(d)
+
+
+for x in range(174457, 174505 + 1):
+    if len(f(x)) == 2:
+        print(f(x))'''
+
+
+
+# Номер 2572 Поляков
+
+'''def f(x):
+    d = set()
+    for i in range(1, int(x ** 0.5) + 1):
+        if x % i == 0:
+            if i % 2 == 0:
+                d.add(i)
+            if (x // i) % 2 == 0:
+                d.add(x // i)
+    return sorted(d)
+
+
+for x in range(190201, 190260 + 1):
+    if len(f(x)) == 4:
+        print(f(x)[-1], f(x)[-2])'''
+
+# Номер 2574 Поляков
+'''def f(x):
+    d = set()
+    for i in range(2, int(x ** 0.5) + 1):
+        if x % i == 0:
+            d.add(i)
+            d.add(x // i)
+    return sorted(d)
+
+for x in range(...):
+    if len(f(x)) == 3:
+        print(f(x))'''
+
+# Номер 2575 Поляков
+'''def f(x):
+    d = set()
+    for i in range(1, int(x ** 0.5) + 1):
+        if x % i == 0:
+            d.add(i)
+            d.add(x // i)
+    return sorted(d)
+
+for x in range(int(244143 ** 0.25), int(1367821 ** 0.25) + 1):
+    if len(f(x)) == 2:
+        print(x ** 2, x ** 3)'''
+
+# Номер 2855 Поляков
