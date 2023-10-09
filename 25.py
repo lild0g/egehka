@@ -152,7 +152,7 @@ for x in range(2358827, 2358891 + 1):
         if x % i == 0:
             d.add(i)
             d.add(x // i)
-    return sorted(d)
+    return sorted(d) 
 summ = 0
 
 for x in range(33333, 55555):
@@ -168,7 +168,7 @@ for x in range(33333, 55555):
 
 # Номер 5957 Поляков
 
-def f(x):
+'''def f(x):
     d = set()
     for i in range(1, int(x ** 0.5) + 1):
         if x % i == 0:
@@ -179,4 +179,72 @@ def f(x):
 
 for x in range(1, 10**9+1):
     if len(f(x)) == 117 and (str(x)[:2] == str(x)[-2:]):
-        print(f(x)[-2:])
+        print(f(x)[-2:])'''
+
+
+# 5
+'''from fnmatch import *
+
+for x in range(0, 10 ** 9 + 1, 23):
+    if fnmatch(str(x), '12345?7?8'):
+        print(x, x // 23)'''
+
+
+# 4
+'''for i in range(1000000, 2000000 + 1):
+    c = 0
+    for x in range(int(i ** 0.5), 899, -1):
+        if i % x == 0:
+            if (abs(i / x - x) <= 100):
+                c += 1
+        if c > 2:
+            print(i)
+            break'''
+
+
+# 2
+
+'''for num in range(95632, 95650 + 1):
+    delitel = []
+    for d in range(1, int(num ** 0.5) + 1):
+        if num % d == 0:
+            if d % 2 != 0:
+                delitel.append(d)
+            if num // d != d and num // d % 2 != 0:
+                delitel.append(num // d)
+    if len(delitel) == 6:
+        delitel.sort()
+        print(delitel[0],
+              delitel[1],
+              delitel[2],
+              delitel[3],
+              delitel[4],
+              delitel[5])'''''
+
+
+# 3
+'''import math
+
+for i in range(123456789, 223456789):
+    if int(math.sqrt(i)) ** 2 == i:
+        a = []
+        for j in range(2, int(math.sqrt(i)) + 1):
+            if i % j == 0:
+                a.append(j)
+                b = i // j
+                if j != b:
+                    a.append(b)
+        if len(a) == 3:
+            a.sort()
+            print(i, max(a))'''
+
+# 1
+'''def p(x):
+    return (x > 1) and all(x % i for i in range(2, int(x ** 0.5) + 1))
+
+
+k = 0
+for i in range(245690, 245756 + 1):
+    if p(i):
+        k += 1
+        print(k, i)'''
