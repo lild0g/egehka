@@ -3,11 +3,6 @@
 #буквы О и И можно использовать произвольное количество раз или не использовать совсем.
 #Сколько различных кодов может составить Борис?
 
-
-
-
-
-
 '''from itertools import product
 a = product('ABCDEFX', repeat=4)
 k = 0
@@ -35,9 +30,37 @@ for j in range(2, 5):
 print(k)'''
 
 # номер 5758
-from itertools import *
+'''from itertools import *
 x = []
-for i in product('антитопия', repeat = 16):
+for i in product('антиуопя', repeat = 16):
     a = ''.join(i)
     if 'антиутопия' in a:
-        if
+        if'''
+
+'''from itertools import *
+c = 0
+a = []
+for i in range(1,6):
+    for j in combinations_with_replacement('ЯУОИА', i):
+        s1 = ''.join(j)
+        a.append(s1)
+b = []
+for k in range(1, 6):
+    for c in combinations_with_replacement('НПТ', k):
+        s2 = ''.join(c)
+        b.append(s2)
+for i in range(len(a)):
+    for j in range(len(a)):
+        if len(str(a[i])) + len(str(b[j])) == 6:
+            c += 1
+            print(c)'''
+
+from itertools import *
+a = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+k = 0
+for a in product('0123456789ABCDE', repeat = 5):
+    x = ''.join(a)
+    if (int(x[0], 15) % 2 == 0 and int(x[1], 15) % 3 == 0 and int(x[2], 15) % 2 == 0 and int(x[3], 15) % 3 == 0 and int(x[4], 15) % 2 == 0) or int(x[0], 15) % 3 == 0 and int(x[1], 15) % 2 == 0 and int(x[2], 15) % 3 == 0 and int(x[3], 15) % 2 == 0 and int(x[4], 15) % 3 == 0:
+        k += 1
+
+print(k)
