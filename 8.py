@@ -55,7 +55,7 @@ for i in range(len(a)):
             c += 1
             print(c)'''
 
-from itertools import *
+'''from itertools import *
 a = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 k = 0
 for a in product('0123456789ABCDE', repeat = 5):
@@ -63,4 +63,19 @@ for a in product('0123456789ABCDE', repeat = 5):
     if (int(x[0], 15) % 2 == 0 and int(x[1], 15) % 3 == 0 and int(x[2], 15) % 2 == 0 and int(x[3], 15) % 3 == 0 and int(x[4], 15) % 2 == 0) or int(x[0], 15) % 3 == 0 and int(x[1], 15) % 2 == 0 and int(x[2], 15) % 3 == 0 and int(x[3], 15) % 2 == 0 and int(x[4], 15) % 3 == 0:
         k += 1
 
-print(k)
+print(k)'''
+
+# Анализ списка заданной длины Поляков
+
+# № 6918
+from itertools import *
+k = 0
+for a in product('ШТСМКИЕВА', repeat = 5):
+    sogl = ['Т', 'М', 'Ш', 'В', 'С', 'К']
+    glas = ['И', 'А', 'Е']
+    x = ''.join(a)
+    k += 1
+    if (x[0] and x[4] in glas) and (x[1] and x[3] in glas) and x[2] in sogl:
+        print(k)
+
+
