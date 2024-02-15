@@ -23,7 +23,7 @@ for i in range(k - 1):
 
 print(ans)'''
 
-ans = []
+'''ans = []
 a = [int(x) for x in open('26.txt')]
 for i in range(len(a) - 1):
     for j in range(i + 1, len(a)):
@@ -31,7 +31,49 @@ for i in range(len(a) - 1):
             sr = (a[i] + a[j]) // 2
             if sr in a:
                 ans.append(sr)
-print(len(ans), max(ans))
+print(len(ans), max(ans))'''
 
 
+# КЕГЭ №12933
+'''f = open('26_12933.txt')
+n, k = [int(x) for x in f.readline().split()] # прочитали и разредали, получили 2 строчки состоящие из цифр
+a = []
+for i in range(1, n + 1): # n - кол-во иттераций; перебором захватываем всё
+    ts, to = [int(x) for x in f.readline().split()] # ts - время шлифовки, to - время окрашивания
+    a.append((ts, i, 's')) # делаем картежи s - шлифовка, o - окрашивание
+    a.append((to, i, 'o'))
+a.sort() # время по возврастанию
+lenta = [0] * (n + 1) # метод для выведения по номеру места, создание ленты
+ks = 0 # кол-во отшлифованных деталей
+spo = set() # создаём множество окрашнных деталей
+start, end = 1, n # start - первое место на ленте, end - последнее место на ленте
+for t, id, op in a: # t - время , id - айди, op - операция
+    if id not in spo: # проверили есть ли деталь
+        spo.add(id) # добавляет окрашенные детали
+        if op == 's': # если деталь для шлифовки
+            lenta[start] = id # ставим этот элемент в начало ленты
+            start += 1
+            ks += 1
+        else: # если деталь для окрашивания
+            lenta[end] = id # ставим этот элемент в конец ленты
+            end -= 1 # -= потому что идём с конца
+print(ks, lenta[k])'''
 
+# КЕГЭ №13101
+f = open('26_13101.txt')
+n = int(f.readline())
+a = []
+for i in f:
+    st, t, o =  [int(x) for x in i.split()] # st - начало время обслуживания, t - время обслуживания, o - окно
+    a.append((st, t, o)) # создаём картеж
+a.sort()
+okno1 = [] # первая очередь
+okno2 = [] # вторая очередь
+kn = 0 # счёчтик обслуживаемых
+for st, t, o in a:
+    okno1 = [x for x in okno1 if x > st]
+    okno2 = [x for x in okno2 if x > st]
+    if o == 1 or (o == 0 and len(okno1) <= len(okno2)):
+        if len(okno1) >= 14:
+            kn += 1
+            continue
