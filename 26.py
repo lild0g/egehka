@@ -60,16 +60,17 @@ for t, id, op in a: # t - время , id - айди, op - операция
 print(ks, lenta[k])'''
 
 # КЕГЭ №13101
-f = open('26_13101.txt')
+'''f = open('26_13101.txt')
 n = int(f.readline())
 a = []
 for i in f:
-    st, t, o =  [int(x) for x in i.split()] # st - начало время обслуживания, t - время обслуживания, o - окно
+    st, t, o = [int(x) for x in i.split()] # st - начало время обслуживания, t - время обслуживания, o - окно
     a.append((st, t, o)) # создаём картеж
 a.sort()
 okno1 = [] # первая очередь
 okno2 = [] # вторая очередь
 kn = 0 # счёчтик обслуживаемых
+k2 = 0
 for st, t, o in a:
     okno1 = [x for x in okno1 if x > st]
     okno2 = [x for x in okno2 if x > st]
@@ -77,3 +78,29 @@ for st, t, o in a:
         if len(okno1) >= 14:
             kn += 1
             continue
+        if len(okno1) == 0:
+            okno1 += [st + t]
+        else:
+            okno1 += [max(okno1) + t]
+    else:
+        if len(okno2) >= 14:
+            kn += 1
+            continue
+        k2 += 1
+        if len(okno2) == 0:
+            okno2 += [st + t]
+        else:
+            okno2 += [max(okno2) + t]
+print(k2, kn)'''
+
+# КЕГЭ 12478
+f = open('26_12478.txt')
+n = f.readline()
+m = []
+for i in f:
+    s, e = [int(x) for x in i.split()]
+    m.append((s, e))
+m.sort()
+
+
+
