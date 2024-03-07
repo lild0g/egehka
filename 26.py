@@ -94,13 +94,28 @@ for st, t, o in a:
 print(k2, kn)'''
 
 # КЕГЭ 12478
-f = open('26_12478.txt')
-n = f.readline()
-m = []
+'''f = open('26_12478.txt')
+n, start, finish = [int(x) for x in f.readline().split()]
+a = []
 for i in f:
-    s, e = [int(x) for x in i.split()]
-    m.append((s, e))
-m.sort()
+    s, e = [int(x) for x in f.readline().split()]
+    a.append([s, e])
+a.sort()'''
+
+# КЕГЭ 11605
+'''f = open('26_11605.txt')
+n = [int(x) for x in f.readline().split()]
+a = []
+k = []
+for i in f:
+    s, e = [int(x) for x in f.readline().split()]
+    a.append((s, e))
+a.sort()
+for i in range(len(a) - 1):
+    if a[i][1] == 10000:
+        k.append(a[i])
+print(len(a))'''
+
 
 
 
