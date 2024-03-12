@@ -85,7 +85,6 @@ for a1 in range(400, 600):
 
 print(m//10)'''
 
-
 '''def f(x, a1, a2):
     return (a1 <= x <= a2) <= (150 <= x <= 390) or (440 <= x <= 570)
 
@@ -97,7 +96,6 @@ for a1 in range(100, 600):
 
 print(m//10)'''
 
-
 '''def f(x,a1,a2):
     return (((150 <= x <= 390) <= (a1 <= x < a2)) and ((440 <= x <= 570) <= ( a1 <= x <= a2)))
 
@@ -108,7 +106,6 @@ for a1 in range(100, 600):
             m = min(m, a2 - a1)
 print(m//10)'''
 
-
 '''def f(x,a1,a2):
     return (not(a1 <= x <= a2) <= (not(250 <= x <= 500))) <= ((a1 <= x <= a2) <= (320 <= x <= 470))
 
@@ -118,7 +115,6 @@ for a1 in range(200, 600):
         if all(f(x, a1, a2) == 1 for x in range(200, 600)):
             m = max(m, a2 - a1)
 print(m//10)'''
-
 
 '''def f(x, y, a):
     return (x + 2 * y < a) or (y > x) or (x > 60) #выражение в ()
@@ -145,7 +141,6 @@ for a in range(1, 1000):
     if all(f(x, a) == 1 for x in range(1, 1000)):
         print(a)'''
 
-
 # 7267 Поляков
 '''def f(x, y, a):
     return (4 * x + y > 115) or (x > 3 * y) or (x + 4 * y < a)
@@ -154,7 +149,6 @@ for a in range(1, 1000):
 for a in range(0, 500):
     if any(f(x, y, a) == 0 for x in range(0, 1000) for y in range(0, 1000)):
         print(a)'''
-
 
 # 6222 Поляков
 '''def f(x, y, a):
@@ -165,7 +159,6 @@ for a in range(0, 1000):
     if all(f(x, y, a) == 1 for x in range(0, 1000) for y in range(0, 1000)):
         print(a)'''
 
-
 # 5921 Поляков
 '''def f(x, y, a):
     return (x + a >= 160) or ((x % 7 == 0) <= (x - 17 <= 0))
@@ -174,7 +167,6 @@ for a in range(0, 1000):
 for a in range(0, 1000):
     if all(f(x, y, a) == 1 for x in range(0, 1000) for y in range(0, 1000)):
         print(a)'''
-
 
 # 5920 Поляков
 '''def f(x, y, z, a):
@@ -185,7 +177,6 @@ for a in range(1, 500):
     if all(f(x, y, z, a) == 1 for x in range(1, 500) for y in range(1, 500) for z in range(1, 500)):
         print(a)'''
 
-
 '''def f(a, x):
     return ((37 + a + x + 45) == 180) == ((a + 90 == 180) and not (a + 23 < 120))
 
@@ -194,7 +185,6 @@ for a in range(1, 181):
     if all(f(a, x) == 1 for x in range(1, 1000)):
         print(a)'''
 
-
 '''def f(x, y, z, a):
     return (x | 50 == x) or (y & 34 != 0) or (z | 24 != 24) or (x * y * z > (a // 8))
 
@@ -202,3 +192,146 @@ for a in range(1, 181):
 for a in range(1, 100):
     if all(f(x, y, z, a) == 1 for x in range(1, 100) for y in range(1, 100) for z in range(1, 100)):
         print(a)'''
+
+# 4881 Поляков - множества
+'''p = {1, 12}
+q = {12, 13, 14, 15, 16}
+a = set()
+
+
+def f(x):
+    return (x not in a) <= ((x not in p) and (x not in q))
+
+
+for x in range(-1000, 1000):
+    if ((x not in a) <= ((x not in p) and (x not in q))) == 0: # или if f(x) == 0:
+        a.add(x)
+print(a)'''
+
+# 3434
+'''p = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+q = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}
+a = set(range(1000))
+
+
+def f(x):
+    return ((x in a) <= (x in p)) or ((x not in q) <= (x not in a))
+
+
+for x in range(-1000, 1000):
+    if (((x in a) <= (x in p)) or ((x not in q) <= (x not in a))) == 0: # или if f(x) == 0:
+        a.remove(x)
+print(len(a))'''
+
+# 2081 КЕГЭ
+'''from itertools import *
+
+b = [''.join(i) for i in product('01', repeat=8)]
+a = set()
+p = {i for i in b if i[0] + i[1] == '11'} # if i[:2] = '11'
+q = {i for i in b if i[-1] == '0'}
+
+
+def f(x):
+    return ((x not in a) <= ((x in p) or (x not in q)))
+
+
+for x in b:
+    if f(x) == 0:
+        a.add(x)
+print(len(a))'''
+
+# 4284 КЕГЭ
+'''p = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+q = {2, 4, 8, 10}
+a = set()
+
+from itertools import *
+k = 0
+def f(x):
+    return ((x in q) <= (x in a)) and ((x in a) <= (x in p))
+
+
+for i in range(1, 11):
+    for a in combinations(p, i):
+        if all(f(x) == 1 for x in p):
+            k += 1
+print(k)'''
+
+# 1027
+'''p = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30}
+q = {1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31}
+a = set(range(1000))
+
+
+def f(x):
+    return ((x in a) <= (x in p)) and ((x in q) <= (x not in a))
+
+
+for x in range(-1000, 1000):
+    if f(x) == 0: # или if f(x) == 0:
+        a.remove(x)
+print(a)'''
+
+# 12924
+'''p = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+q = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}
+a = set(range(1000))
+
+
+def f(x):
+    return ((x in a) <= (x in p)) and ((x not in q) <= (x not in a))
+
+
+for x in range(-1000, 1000):
+    if f(x) == 0: # или if f(x) == 0:
+        a.remove(x)
+print(a)'''
+
+# 4283
+'''p = {1, 3, 4, 9, 11, 13, 15, 17, 19, 21}
+q = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}
+a = set()
+
+
+def f(x):
+    return ((x in p) <= (x in a)) or ((x not in a) <= (x not in q))
+
+
+for x in range(-1000, 1000):
+    if f(x) == 0:  # или if f(x) == 0:
+        a.add(x)
+print(a)'''
+
+# 3156
+'''p = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+q = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}
+a = set(range(1000))
+
+
+def f(x):
+    return ((x in a) <= (x in p)) and ((x in q) <= (x not in a))
+
+
+for x in range(-1000, 1000):
+    if f(x) == 0:  # или if f(x) == 0:
+        a.remove(x)
+print(len(a))'''
+
+#1409
+'''p = {2,4,6,8,10,12,14,16,18,20}
+q = {3,6,9,12,15,18,21,24,27,30}
+r = {12,24,36,48,60}
+a = set()
+
+
+def f(x):
+    return (x not in a) <= (((x in p) and (x in q)) <= (x in r))
+
+
+for x in range(-1000, 1000):
+    if f(x) == 0:  # или if f(x) == 0:
+        a.add(x)
+print(a)
+print(18 * 6)'''
+
