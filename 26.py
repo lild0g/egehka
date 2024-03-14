@@ -8,7 +8,6 @@ for i in range(1, len(a)):
         k += 1
 print(k, b)'''
 
-
 '''ans = [0, 0]
 f = open('26.txt')
 k = int(f.readline())
@@ -32,7 +31,6 @@ for i in range(len(a) - 1):
             if sr in a:
                 ans.append(sr)
 print(len(ans), max(ans))'''
-
 
 # КЕГЭ №12933
 '''f = open('26_12933.txt')
@@ -116,6 +114,56 @@ for i in range(len(a) - 1):
         k.append(a[i])
 print(len(a))'''
 
+# номер 8512 Кабанов
+'''f = open('26_8512.txt')
+k = int(f.readline())
+n = int(f.readline())
+a = []
+for s in f:
+    st, end = [int(x) for x in s.split()]
+    a.append([st, end])
+a.sort()
+b = [0] * k  # номер +1
+count = 0  # обслуженные пассажиры
+last_s = 0  # текущий последний багаж начало
+last_end = 0  # минимальный номер текущей последней ячейки
+for i in a:
+    s = i[0]
+    e = i[1]
+    for j in range(k):
+        if b[j] <= s:
+            b[j] = e + 1
+            count += 1
+            if s > last_s:
+                last_s = s
+                last_end = j + 1
+            break
+print(count, last_end)'''
 
-
-
+# номер 6406 Поляков
+'''f = open('26-119.txt')
+n, l, m = [int(x) for x in f.readline().split()]
+a = []
+for s in f:
+    st, t, typ = [x for x in s.split()]
+    end = int(st) + int(t)
+    a.append([int(st), end, typ])
+a.sort()
+k_A = 0
+k_B = 0
+park = [0] * (l + m)  # места для автомобилей  0...l - 1 места; места для микроавтобусов l...l + m - 1
+for i in a:
+    st, t, typ = i[0], i[1], i[2]
+    if typ == 'A':
+        for j in range(l + m):
+            if park[j] <= st:
+                park[j] = t
+                k_A += 1
+                break
+    if typ == 'B':
+        for j in range(l, l + m):
+            if park[j] <= st:
+                park[j] = t
+                k_B += 1
+                break
+print(k_B, n - k_A - k_B)'''
