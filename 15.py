@@ -318,7 +318,7 @@ for x in range(-1000, 1000):
         a.remove(x)
 print(len(a))'''
 
-#1409
+# 1409
 '''p = {2,4,6,8,10,12,14,16,18,20}
 q = {3,6,9,12,15,18,21,24,27,30}
 r = {12,24,36,48,60}
@@ -335,3 +335,48 @@ for x in range(-1000, 1000):
 print(a)
 print(18 * 6)'''
 
+# номер 4972 Поляков - ОТРЕЗКИ
+'''from itertools import *
+
+
+def f(x):
+    P = 1 <= x <= 98
+    Q = 25 <= x <= 42
+    A = a1 <= x <= a2
+    return Q <= (((not P) and Q) <= A)
+
+
+Ox = [i / 4 for i in range(0 * 4, 43 * 4)]
+ans = []
+for a1, a2 in combinations(Ox, 2):
+    if all(f(x) == 1 for x in Ox):
+        ans.append(a2 - a1)
+print(min(ans))'''
+
+
+# номер 6639 Поляков
+'''def f(x):
+    P = 5 <= x <= 54
+    Q = 50 <= x <= 93
+    return ((not P) and Q) <= (x > A)
+
+
+for A in range(-500, 500):
+    k = 0
+    for x in range(-500, 500):
+        if f(x) == 0:
+            k += 1
+    if k == 20:
+        print(A)'''
+
+
+
+# номер 4137 Поляков
+'''def f(x):
+    p = x in {48, 52, 56}
+    q = 29 <= x <= 47
+    return (((x % 3 != 0) and (not p)) <= ((abs(x - 50) <= 7) <= q)) or (x & a == 0)
+
+for a in range(1, 500):
+    if all(f(x) == 1 for x in range(500)):
+        print(a)'''
