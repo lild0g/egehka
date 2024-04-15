@@ -39,3 +39,33 @@ for x in range(1, 8):
 print(count)
 '''  # треугольник с двумя условиями
 
+from turtle import *
+left(90) # поворачивваем голову черепахи на 90 градусов
+k = 20
+speed(100)
+for i in range(2):
+    forward(13 * k)
+    right(90)
+    forward(18 * k)
+    right(90)
+up()
+forward(5 * k)
+right(90)
+forward(9 * k)
+left(90)
+down()
+for i in range(2):
+    forward(11 * k)
+    right(90)
+    forward(7 * k)
+    right(90)
+up() # надо поднять хвост в конце всегно алгоритма
+
+for x in range(-1 * k, 25 * k, k):
+    for y in range(-1 * k, 25 * k, k):
+        goto(x, y)
+        dot(3, 'red')
+done()
+
+
+

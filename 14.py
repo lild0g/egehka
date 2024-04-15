@@ -85,7 +85,7 @@ for A in range(1, 1000):
             print(A)
             break'''
 
-def f(x):
+'''def f(x):
     P = 1 <= x <= 98
     Q = 25 <= x <= 42
     A = a1 <= x <= a2
@@ -97,4 +97,19 @@ ans = []
 for a1, a2 in combinations(Ox, 2):
     if all(f(x) == 1 for x in Ox):
         ans.append(a2 - a1)
-print(min(ans))
+print(min(ans))'''
+
+'''x = 3 * 2187 ** 2020 + 3 * 729 ** 2021 - 2 * 81 ** 2022 + 27 ** 2023 - 4 * 3 ** 2024 - 2029
+k = 0
+while x != 0:
+    if x % 27 > 9:
+        k += 1
+    x //= 27
+print(k)'''
+
+for x in range(27):
+    a1 = 1*27**5 + 2*27**4 + 3*27**3 + x*27**2 + 2*27+4
+    a2 = 1*27**5 + 3*27**4 + 5*27**3 + x*27**2 + 7*27+8
+    a = a1 + a2
+    if a % 26 == 0:
+        print(x, a//26)

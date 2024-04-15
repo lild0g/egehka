@@ -123,8 +123,6 @@ from sys import *  # вызывает функцию sys
 setrecursionlimit(10000)
 
 def F(n):
-    if n > 2024: return n
-    if n <= 2024: return n * F(n + 1)
-
-
-print(F(2022) / F(2024))
+    if n <= 7: return 1
+    if n > 7: return n + 2 + F(n - 1)
+print(F(2024) - F(2020))

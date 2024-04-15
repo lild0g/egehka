@@ -22,5 +22,15 @@ for i in range(32):
 print(k)
 '''
 
+from ipaddress import *
+k = 0
+net = ip_network('105.224.200.224/255.255.255.224', 0)
+for ip in net:
+    ip = list(map(int, str(ip).split('.')))
+    ip2 = [bin(x)[2:] for x in ip]
+    ip2 = ''.join(ip2)
+    if ip2.count('1') % 4 == 0:
+        k += 1
+print(k)
 
 

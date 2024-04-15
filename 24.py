@@ -67,3 +67,9 @@ print(max(len(c) for  c in s.split()))'''#6
 s = s.replace('O', 'A').replace('D', 'C').replace('F', 'C')
 s = s.replace('CCA', '*').replace('A', ' ').replace('C', ' ')
 print(max(len(c) for c in s.split()))''' #8
+
+
+# досрок с КЕГЭ
+s = open('24_15339.txt').readline()
+k = 0
+for a i

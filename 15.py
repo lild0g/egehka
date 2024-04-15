@@ -380,3 +380,19 @@ for A in range(-500, 500):
 for a in range(1, 500):
     if all(f(x) == 1 for x in range(500)):
         print(a)'''
+from itertools import *
+
+
+def f(x):
+    B = 24 <= x <= 90
+    C = 47 <= x <= 115
+    A = a1 <= x <= a2
+    return C <= ((not A and B) <= (not C))
+
+
+Ox = [i / 4 for i in range(23 * 4, 116 * 4)]
+ans = []
+for a1, a2 in combinations(Ox, 2):
+    if all(f(x) == 1 for x in Ox):
+        ans.append(a2 - a1)
+print(min(ans))
